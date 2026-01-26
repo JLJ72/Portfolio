@@ -122,4 +122,162 @@
       align-items: center;
       gap: 8px;
       border: 2px solid transparent;
-      tran
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-outline {
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .grid {
+      display: grid;
+      gap: 32px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      background: #fff;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .soft {
+      background: var(--bg-soft);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <strong>Dinh Tran Hoang Long</strong>
+      <div>
+        <a href="#about">Profile</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="container">
+    <span class="tag">Business Development & Education</span>
+    <h1>
+      Business × Education × AI
+    </h1>
+    <p>
+      TESOL master’s candidate with strong background in business development,
+      data analysis, and generative AI integration.
+    </p>
+
+    <div class="buttons">
+      <a href="#contact" class="btn btn-primary">
+        <i data-lucide="send"></i> Contact
+      </a>
+
+      <!-- VIEW CV - FIXED -->
+      <a
+        href="assets/cv/CV_Dinh_Tran_Hoang_Long.pdf"
+        class="btn btn-outline"
+        target="_blank"
+        download
+      >
+        <i data-lucide="file-text"></i> View CV
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="soft">
+  <div class="container">
+    <h2>Profile</h2>
+    <p>
+      I work at the intersection of education, business strategy, and AI.
+      My experience spans finance, B2B development, and language education,
+      with a strong focus on data-driven decision making.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2>Skills</h2>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Generative AI & Data</h3>
+        <p>Gemini, Prompt Engineering, BigQuery ML</p>
+      </div>
+      <div class="card">
+        <h3>Business</h3>
+        <p>B2B Negotiation, CRM, Market Analysis</p>
+      </div>
+      <div class="card">
+        <h3>Education</h3>
+        <p>TESOL, Digital Pedagogy, Assessment</p>
+      </div>
+      <div class="card">
+        <h3>Languages</h3>
+        <p>English, Vietnamese, Japanese (N3)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="soft">
+  <div class="container">
+    <h2>Experience</h2>
+    <p>
+      Business Development Agent, Financial Consultant,
+      Client Relationship Officer, English Teacher.
+    </p>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2>Contact</h2>
+    <p>Email: dinhtranhoanglong@gmail.com</p>
+    <p>Location: Ho Chi Minh City, Vietnam</p>
+  </div>
+</section>
+
+<footer>
+  © 2025 Dinh Tran Hoang Long
+</footer>
+
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>
