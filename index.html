@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hoang Long | Portfolio</title>
 
   <style>
@@ -39,24 +39,25 @@
     }
 
     .hero-summary {
-      max-width: 750px;
+      max-width: 760px;
       margin-bottom: 30px;
       color: #cbd5f5;
     }
 
     .cta-group {
       display: flex;
-      gap: 15px;
-      margin: 30px 0;
+      gap: 16px;
+      margin: 32px 0;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 12px 22px;
+      padding: 12px 24px;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
-      transition: 0.2s ease;
+      transition: all 0.2s ease;
+      display: inline-block;
     }
 
     .btn-primary {
@@ -80,35 +81,42 @@
     }
 
     .highlights-box {
-      margin-top: 40px;
+      margin-top: 48px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
     }
 
     .highlight-item {
       background: #020617;
       border: 1px solid #1e293b;
-      padding: 20px;
-      border-radius: 10px;
+      padding: 24px;
+      border-radius: 12px;
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px;
+      padding: 32px 20px;
       border-top: 1px solid #1e293b;
       color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: inherit;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section id="hero">
     <div class="container">
 
-      <span class="hero-role">Business Development & Education Specialist</span>
+      <span class="hero-role">
+        Business Development & Education Specialist
+      </span>
 
       <h1>
         Bridging the gap between
@@ -124,12 +132,13 @@
       </p>
 
       <div class="cta-group">
-        <a href="#contact" class="btn btn-primary">Contact Me</a>
+        <a href="#contact" class="btn btn-primary">
+          Contact Me
+        </a>
 
         <a
-          href="CV_Dinh_Tran_Hoang_Long.pdf"
+          href="./CV_Dinh_Tran_Hoang_Long.pdf"
           target="_blank"
-          download
           class="btn btn-outline"
         >
           View CV
@@ -142,24 +151,24 @@
       </p>
 
       <p>
-        Currently pursuing a Master's in T.E.S.O.L, I specialize in applying cloud technologies
-        and Generative AI to educational frameworks and business operations.
+        Currently pursuing a Master's in T.E.S.O.L, I focus on applying cloud technologies and
+        Generative AI to educational frameworks and business operations.
       </p>
 
       <div class="highlights-box">
         <div class="highlight-item">
           <h4>Generative AI</h4>
-          <p>Prompt Engineering, Gemini, LLM workflows</p>
+          <p>Prompt engineering, Gemini, LLM workflows</p>
         </div>
 
         <div class="highlight-item">
           <h4>Business Development</h4>
-          <p>B2B Negotiation, CRM, Strategy</p>
+          <p>B2B negotiation, CRM, strategy</p>
         </div>
 
         <div class="highlight-item">
           <h4>Education & TESOL</h4>
-          <p>Academic Research, Curriculum Design</p>
+          <p>Academic research, curriculum design</p>
         </div>
       </div>
 
