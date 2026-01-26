@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Dinh Tran Hoang Long - Business Development & Education Specialist">
+    <title>Dinh Tran Hoang Long | Portfolio</title>
+    <!-- Fonts: Inter for clean, modern readability -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            /* Palette: Muted Teal, Deep Charcoal, Clean White */
+            --primary: #2C7A7B; /* Muted Teal */
+            --primary-dark: #234E52;
+            --text-main: #2D3748; /* Charcoal */
+            --text-muted: #718096;
+            --bg-body: #FFFFFF;
+            --bg-light: #F7FAFC; /* Very light gray */
+            --bg-card: #FFFFFF;
+            --border-color: #E2E8F0;
+            
+            --spacing-unit: 1rem;
+            --container-width: 1000px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--text-main);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-muted);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-bg {
+            background-color: var(--bg-light);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #hero {
+            padding-top: 180px;
+            padding-bottom: 100px;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-role {
+            display: inline-block;
+            background-color: rgba(44, 122, 123, 0.1);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-summary {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin: 1.5rem 0 2.5rem;
+            max-width: 650px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .highlights-box {
+            background-color: white;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon-box {
+            background-color: var(--bg-light);
+            padding: 0.75rem;
+            border-radius: 6px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-category {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skill-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .skill-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .role-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+
+        .role-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .company-name {
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .role-date {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-family: 'Inter', monospace;
+        }
+
+        .role-desc {
+            font-size: 0.95rem;
+        }
+
+        /* Education & Certs */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .edu-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .cert-list {
+            margin-top: 1rem;
+        }
+        
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        .cert-item:last-child {
+            border-bottom: none;
+        }
+
+        .honors-banner {
+            margin-top: 2rem;
+            background: linear-gradient(135deg, #2C7A7B 0%, #234E52 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .honors-icon {
+            font-size: 2rem;
+            opacity: 0.9;
+        }
+
+        .honors-content h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .honors-content p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+        }
+
+        /* Contact & Footer */
+        .contact-section {
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-item i {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-light);
+            border-radius: 50%;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            
+            .nav-links {
+                display: none; /* Add JS toggle for mobile */
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+            
+            .timeline-item {
+                padding-left: 2rem;
+            }
+        }
+        
+        /* Utility classes for text colors */
+        .text-primary { color: var(--primary); }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Dinh Tran Hoang Long</div>
+                <div class="nav-links">
+                    <a href="#about">Profile</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-role">Business Development & Education Specialist</span>
+                <h1>Bridging the gap between <span class="text-primary">Business Strategy</span>, <span class="text-primary">Education</span>, and <span class="text-primary">AI Innovation</span>.</h1>
+                <p class="hero-summary">
+                    Master's candidate in T.E.S.O.L with advanced competencies in Generative AI and Data Analytics. 
+                    Proven track record in B2B negotiations, financial consulting, and digital pedagogy. 
+                    Leveraging Google Cloud technologies to optimize workflows and drive decision-making.
+                </p>
+                <div class="cta-group">
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <!-- In a real scenario, this would link to the PDF file -->
+                    <a href="#" class="btn btn-outline" onclick="alert('CV Download functionality would go here.'); return false;">View CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Profile -->
+    <section id="about" class="section-bg">
+        <div class="container">
+            <h2>Professional Profile</h2>
+            <div class="about-grid">
+                <div>
+                    <p>
+                        I am a multidisciplinary professional combining technical precision with strategic thinking. My background spans financial consulting, business development, and education, unified by a strong focus on data-driven decision-making and Generative AI integration.
+                    </p>
+                    <p>
+                        Currently pursuing a Master's in T.E.S.O.L, I specialize in applying cloud technologies (BigQuery, Gemini) to educational frameworks and business operations. I seek to apply this unique hybrid skillset to solve complex challenges in EdTech, consulting, or international business.
+                    </p>
+                </div>
+                <div class="highlights-box">
+                    <div class="highlight-item">
+                        <div class="icon-box"><i data-lucide="brain-circuit"></i></div>
+                        <div>
+                            <h4>Generative AI</h4>
+                            <p style="font-size: 0.9rem; margin:0;">Prompt Engineering, Workflow Integration, Gemini & LLMs</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="icon-box"><i data-lucide="trending-up"></i></div>
+                        <div>
+                            <h4>Business Dev</h4>
+                            <p style="font-size: 0.9rem; margin:0;">B2B Negotiations, CRM Strategy, Strategic Planning</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <div class="icon-box"><i data-lucide="languages"></i></div>
+                        <div>
+                            <h4>Linguistics</h4>
+                            <p style="font-size: 0.9rem; margin:0;">TESOL Master's Candidate, Japanese (N3), English (Pro)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical & Core Skills</h2>
+            <div class="skills-grid">
+                <!-- Gen AI -->
+                <div class="skill-card">
+                    <div class="skill-category">
+                        <i data-lucide="cpu" class="text-primary"></i>
+                        Generative AI & Data
+                    </div>
+                    <ul class="skill-list">
+                        <li>Gemini for Data Scientists</li>
+                        <li>BigQuery Machine Learning (Inference & Remote Models)</li>
+                        <li>AI Workflow Integration</li>
+                        <li>Prompt Engineering</li>
+                    </ul>
+                </div>
+
+                <!-- Data Analysis -->
+                <div class="skill-card">
+                    <div class="skill-category">
+                        <i data-lucide="bar-chart-2" class="text-primary"></i>
+                        Data Analysis
+                    </div>
+                    <ul class="skill-list">
+                        <li>SQL Querying</li>
+                        <li>Python Notebooks for Data Review</li>
+                        <li>Customer Sentiment Analysis</li>
+                        <li>Image Classification Models</li>
+                    </ul>
+                </div>
+
+                <!-- Cloud & Workspace -->
+                <div class="skill-card">
+                    <div class="skill-category">
+                        <i data-lucide="cloud" class="text-primary"></i>
+                        Google Cloud & Tools
+                    </div>
+                    <ul class="skill-list">
+                        <li>Google Cloud Platform (GCP)</li>
+                        <li>Advanced Google Docs/Sheets/Forms</li>
+                        <li>Google Classroom Administration</li>
+                        <li>CRM Data Management</li>
+                    </ul>
+                </div>
+
+                <!-- Soft Skills & Business -->
+                <div class="skill-card">
+                    <div class="skill-category">
+                        <i data-lucide="users" class="text-primary"></i>
+                        Business & Soft Skills
+                    </div>
+                    <ul class="skill-list">
+                        <li>Client Relationship Management</li>
+                        <li>Strategic Communication</li>
+                        <li>Analytical Problem Solving</li>
+                        <li>Cross-Functional Leadership</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-bg">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                
+                <!-- Role 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="role-header">
+                        <div class="role-title">Business Development Agent</div>
+                        <div class="role-date">Mar 2022 - May 2022</div>
+                    </div>
+                    <div class="company-name">Debex Debt Trading Online Platform</div>
+                    <div class="role-desc">
+                        <ul>
+                            <li>Facilitated international B2B transactions connecting financial institutions and debt collection agencies.</li>
+                            <li>Managed partner portfolios ensuring data verification and seamless auction participation.</li>
+                            <li>Orchestrated onboarding for corporate clients, advising on exchange regulations and optimizing auction success.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="role-header">
+                        <div class="role-title">Financial Consultant</div>
+                        <div class="role-date">Sep 2021 - Nov 2021</div>
+                    </div>
+                    <div class="company-name">Bostonmex International Stock Exchange</div>
+                    <div class="role-desc">
+                        <ul>
+                            <li>Analyzed market trends and financial data to provide actionable investment insights.</li>
+                            <li>Optimized client acquisition funnels using CRM data, converting leads into active accounts.</li>
+                            <li>Consulted on risk mitigation strategies, ensuring high client retention.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="role-header">
+                        <div class="role-title">Client Relationship Officer</div>
+                        <div class="role-date">May 2019 - Oct 2020</div>
+                    </div>
+                    <div class="company-name">TP Bank / Vietcredit</div>
+                    <div class="role-desc">
+                        <ul>
+                            <li>Leveraged database insights to identify high-potential customer segments.</li>
+                            <li>Exceeded monthly KPIs through strategic communication and needs-based selling.</li>
+                            <li>Streamlined contract processing workflows ensuring 100% compliance with banking regulations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="role-header">
+                        <div class="role-title">English Teacher</div>
+                        <div class="role-date">2020 - Present</div>
+                    </div>
+                    <div class="company-name">The Asia-Pacific English Center</div>
+                    <div class="role-desc">
+                        <ul>
+                            <li>Designed interactive curriculum modules integrating gamification for engagement.</li>
+                            <li>Implemented performance tracking methods to assess progress and adjust pedagogical strategies.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education">
+        <div class="container">
+            <h2>Education & Achievement</h2>
+            
+            <!-- Academic -->
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3 style="margin-bottom: 0.5rem;">Master of T.E.S.O.L</h3>
+                    <p class="text-primary" style="font-weight: 500;">Candidate (2024 - 2026)</p>
+                    <p style="font-size: 0.9rem;">Specializing in Digital Pedagogy and AI Integration in Language Learning.</p>
+                </div>
+                <div class="edu-card">
+                    <h3 style="margin-bottom: 0.5rem;">B.A. English Linguistics & Literature</h3>
+                    <p class="text-primary" style="font-weight: 500;">Hong Bang International University (2018 - 2023)</p>
+                </div>
+            </div>
+
+            <br><br>
+
+            <!-- Certifications -->
+            <h3>Certifications</h3>
+            <div class="cert-list">
+                <div class="cert-item">
+                    <span>Generative AI for Data Scientists & Analysts</span>
+                    <span style="font-weight: 600;">2025</span>
+                </div>
+                <div class="cert-item">
+                    <span>Google Certified Educator Level 1</span>
+                    <span style="font-weight: 600;">2025</span>
+                </div>
+                <div class="cert-item">
+                    <span>JLPT N3 (Japanese Language Proficiency)</span>
+                    <span style="font-weight: 600;">2025</span>
+                </div>
+                <div class="cert-item">
+                    <span>T.E.S.O.L 120 hours Certification</span>
+                    <span style="font-weight: 600;">2023</span>
+                </div>
+            </div>
+
+            <!-- Honors -->
+            <div class="honors-banner">
+                <div class="honors-icon">
+                    <i data-lucide="award"></i>
+                </div>
+                <div class="honors-content">
+                    <h4>Top Performer - Google Cloud Skills Boost (2025)</h4>
+                    <p>Achieved perfect assessment scores (100%) in Generative AI, BigQuery Machine Learning, and Google Workspace Lab Exams.</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <h3>Community Leadership</h3>
+                <p><strong>Administrator & Content Lead (2014 - Present):</strong> Founded and managed high-traffic social media communities. Analyzed interaction metrics to optimize content scheduling, resulting in sustained member growth.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-bg">
+        <div class="container">
+            <div class="contact-section">
+                <h2>Get in Touch</h2>
+                <p>Open to opportunities in Business Development, EdTech, and Data Analytics.</p>
+                
+                <div class="contact-grid">
+                    <a href="mailto:dinhtranhoanglong@gmail.com" class="contact-item">
+                        <div class="contact-icon"><i data-lucide="mail"></i></div>
+                        <strong>Email</strong>
+                        <span>dinhtranhoanglong@gmail.com</span>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/dinh-tran-hoang-long" target="_blank" class="contact-item">
+                        <div class="contact-icon"><i data-lucide="linkedin"></i></div>
+                        <strong>LinkedIn</strong>
+                        <span>dinh-tran-hoang-long</span>
+                    </a>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+                        <strong>Location</strong>
+                        <span>Ho Chi Minh City, Vietnam</span>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon"><i data-lucide="phone"></i></div>
+                        <strong>Phone</strong>
+                        <span>0906 416 385</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Dinh Tran Hoang Long. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Script to Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
